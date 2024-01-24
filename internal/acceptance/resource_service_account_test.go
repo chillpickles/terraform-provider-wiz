@@ -93,6 +93,14 @@ func TestAccResourceWizServiceAccount_basic(t *testing.T) {
 				Config: testResourceWizServiceAccountBasic(rName, "BROKER"),
 				Check:  resourceWizServiceAccountCheckHelper(rName, "BROKER"),
 			},
+			{
+				Config: testResourceWizServiceAccountBasic(rName, "FIRST_PARTY"),
+				Check: resourceWizServiceAccountCheckHelper(rName, "FIRST_PARTY"),
+			},
+			{
+				Config: testResourceWizServiceAccountBasic(rName, "KUBERNETES_CONNECTOR"),
+				Check: resourceWizServiceAccountCheckHelper(rName, "KUBERNETES_CONNECTOR"),
+			},
 		},
 	})
 }
